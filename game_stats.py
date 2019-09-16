@@ -1,4 +1,3 @@
-import json
 class GameStats():
     """跟踪游戏的统计信息"""
 
@@ -10,8 +9,8 @@ class GameStats():
         self.game_active = False
         
         # 在任何情况下都不应重置最高得分
-        with open("high_score.json") as f_obj:
-            hs = json.load(f_obj)
+        with open("high_score.txt") as f_obj:
+            hs = f_obj.read()
         self.high_score = hs
 
     def reset_stats(self):

@@ -235,6 +235,6 @@ def check_aliens_bottom(ai_settings,screen,stats,sb,ship,aliens,bullets):
             
 def check_high_score(stats,sb):
     """检查是否诞生了新的最高得分"""
-    if stats.score > stats.high_score:
+    if stats.score > int(stats.high_score):
         stats.high_score = stats.score
         sb.prep_high_score()

@@ -1,5 +1,4 @@
 import pygame
-import json
 from pygame.sprite import Group
 from settings import Settings
 from game_stats import GameStats
@@ -34,8 +33,8 @@ def run_game():
     # 开始游戏的主循环
     while True:
         # 最高分文件
-        with open("high_score.json",'w') as f_obj:
-            json.dump(stats.high_score,f_obj)
+        with open("high_score.txt",'w') as f_obj:
+            f_obj.write(str(stats.high_score))
             
         gf.check_events(ai_settings,screen,stats,sb,play_button,ship,
                 aliens,bullets)
